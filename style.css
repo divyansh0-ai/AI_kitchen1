@@ -281,6 +281,55 @@ body {
     transform: translateY(-2px);
 }
 
+/* Filter Buttons */
+.filter-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 1rem 1.5rem !important;
+    border: 2px solid var(--gray-200) !important;
+    background: white !important;
+    border-radius: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    min-width: 100px !important;
+}
+
+.filter-btn:hover:not(.active) {.filter-btn.active {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border-color: #10b981 !important;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}
+
+
+
+.filter-btn.active .filter-icon {
+    transform: scale(1.1);
+}
+
+.filter-btn.active .filter-name {
+    color: white !important;
+}
+
+.filter-icon {
+    font-size: 1.5rem !important;
+    transition: transform 0.3s;
+}
+
+.filter-name {
+    font-size: 0.85rem !important;
+    color: var(--gray-700);
+    transition: color 0.3s;
+}
+
 .search-input-wrapper {
     display: flex;
     gap: 1rem;
@@ -339,14 +388,6 @@ body {
 .features-section {
     margin: 0 0 4rem;
     padding: 0;
-}
-
-.filter-btn.active {
-    background: linear-gradient(135deg, #10b981, #059669) !important;
-    border-color: #10b981 !important;
-    color: white !important;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
 }
 
 .features-grid {
@@ -1162,7 +1203,9 @@ body {
     .suggestions-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
-}/* ================================================================
+}
+
+/* ================================================================
    CONVERT BUTTON - BIG 3D EFFECT
    ================================================================ */
 
@@ -1179,7 +1222,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(16, 185, 129, 0.4),
         0 4px 10px rgba(16, 185, 129, 0.3),
         inset 0 -3px 0 rgba(0, 0, 0, 0.2);
@@ -1200,7 +1243,7 @@ body {
 
 .search-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 
+    box-shadow:
         0 15px 35px rgba(16, 185, 129, 0.5),
         0 8px 15px rgba(16, 185, 129, 0.4),
         inset 0 -3px 0 rgba(0, 0, 0, 0.2);
@@ -1212,9 +1255,8 @@ body {
 
 .search-btn:active {
     transform: translateY(-1px);
-    box-shadow: 
+    box-shadow:
         0 5px 15px rgba(16, 185, 129, 0.4),
         0 2px 5px rgba(16, 185, 129, 0.3),
         inset 0 3px 5px rgba(0, 0, 0, 0.3);
 }
-
