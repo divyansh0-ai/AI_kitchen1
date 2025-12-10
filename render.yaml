@@ -2,13 +2,14 @@ services:
   - type: web
     name: ai-kitchen
     runtime: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: GEMINI_API_KEY
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GROQ_API_KEY
         sync: false
       - key: PEXELS_API_KEY
-        sync: false
-      - key: GROQ_API_KEY
         sync: false
     healthCheckPath: /
